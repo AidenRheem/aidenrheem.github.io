@@ -18,16 +18,16 @@
 
 window.CV = {
   /* ---- Header ---- */
-  name: "James J. Kim",
-  role: "PhD in CS",
-  affiliation: "Cornell University",
+  name: "Aiden Rheem",
+  role: "BS in Environmental Science",
+  affiliation: "University of California, Berkeley",
   // Character(s) between role and affiliation in the hero. Common choices:
   //   "·"  middle dot       "•"  bullet          "—"  em dash
   //   "–"  en dash          "|"  pipe            ","  comma
   //   "at" word (will be padded with spaces automatically)
   roleSeparator: "@",
   // Browser tab title (shown next to the favicon).
-  tabTitle: "James J. Kim",
+  tabTitle: "Aiden Rheem",
   // Headshot. "auto" looks for assets/photo.{jpg,jpeg,png,webp}.
   // Set to "" to force the stripe placeholder, or to an explicit path
   // (e.g. "assets/my-headshot.png") to override the auto-detect.
@@ -36,18 +36,17 @@ window.CV = {
   /* ---- About paragraphs ----
      Add as many paragraphs as you want — they'll render in order. */
   bio: [
-    "I'm a PhD student in Computer Science at Cornell, broadly interested in automating and accelerating scientific discovery. Lately, I've been working as a part of [AI-MI](https://aimi.cornell.edu/). I'm fortunate to be advised by [Jennifer Sun](https://jenjsun.com/) and [Peter Frazier](https://people.orie.cornell.edu/pfrazier/).",
-    "During my undergrad, I developed computational models of brain-behavior dynamics in substance use addiction with Amy Kuceyeski in the [CoCo Lab](https://www.cocolaboratory.com/), and worked on real-time acoustic sensing for hand pose tracking in wearable tech with Cheng Zhang in the [SciFi Lab](https://scifilab.org/).",
-    "Happy to chat.",
+    "I'm a BS student in Environmental Science at UC Berkeley, interested in connecting sustainability with technology.",
+    "During high school, I developed 3D printable patient-specific aortic models for robotic catheders in the [RaMS Lab](https://rams.engr.ucr.edu), and worked on real-time laminar jamming structures for hand tremor stabilization with Dr. Jonathan Realmuto in the [Bionic Systems Lab](https://bsl.engr.ucr.edu).",
   ],
 
   /* ---- Link row under the name ----
      Order here is the order they appear. Remove or add freely. */
   links: [
-    { label: "email", href: "mailto:jjk297@cornell.edu" },
-    { label: "linkedin", href: "https://linkedin.com/in/biojameskim" },
-    { label: "scholar", href: "https://scholar.google.com/citations?user=zmmeZvEAAAAJ&hl=en" },
-    { label: "github", href: "https://github.com/biojameskim" },
+    { label: "email", href: "mailto:aidenrheem@berkeley.edu" },
+    { label: "linkedin", href: "https://linkedin.com/in/aidenrheem" },
+    { label: "scholar", href: "https://scholar.google.com/" },
+    { label: "github", href: "https://github.com/aidenrheem" },
     { label: "writing", href: "#writing" },
     { label: "cv", href: "assets/cv.pdf" },
   ],
@@ -70,22 +69,10 @@ window.CV = {
   /* ---- Education ---- */
   education: [
     {
-      school: "Cornell University",
-      degree: "Ph.D. in Computer Science",
-      years: "2026 — Present",
-      detail: "Advised by Jennifer J. Sun & Peter Frazier",
-    },
-    {
-      school: "Cornell University",
-      degree: "M.S. in Computer Science",
-      years: "2025 — Present",
-      detail: "*Fully-funded research-based MS (cohort size — 7)*\nGPA: 4.1",
-    },
-    {
-      school: "Cornell University",
-      degree: "B.A. in Computer Science, B.A. in Mathematics",
-      years: "2021 — 2025",
-      detail: "*Distinction in All Subjects*\nGPA: 3.9",
+      school: "University of California, Berkeley",
+      degree: "BS in Environmental Science",
+      years: "2026 — Expected 2030",
+      detail: "*XXX*\nGPA: X.X",
     },
   ],
 
@@ -93,30 +80,10 @@ window.CV = {
      `link` is optional — include it to make the title clickable. */
   publications: [
     {
-      title: "Contrastive Discovery: Open-Ended Scientific Discovery over Competing Explanations",
+      title: "XXX",
       authors: "Ziang Liu\\*, __**James J. Kim**__\\*, Yijia Dai, Jennifer J. Sun",
-      venue: "*In Submission*",
-      year: "2026"
-    },
-    {
-      title: "The Reliability Gap in Agentic Evidence Verification for Materials Science",
-      authors: "Albert Gong, __**James J. Kim**__, Anmol Kabra, Aaditya Panigrahi, Jiashuo Wang, Arjun B. Mulchandani, Michael Freeman, Fatmagul Katmer, Joshua Peters Wakefield, Linxi Zhao, Chao Wan, Akanksha Sarkar, Yoav Artzi, Leslie M Schoop, John Thickstun, Kilian Q Weinberger, Eun-Ah Kim, Peter I. Frazier, Jennifer J. Sun",
-      venue: "FM4Science, AIWILD @ **ICLR '26**",
-      year: "2026",
-      link: "https://openreview.net/forum?id=8LZhlws9Ye",
-    },
-    {
-      title: "Predicting future alcohol use from baseline brain connectomes",
-      authors: "__**James J. Kim**__, Qingyu Zhao, Mert Sabuncu, Amy Kuceyeski",
-      venue: "Poster presented @ **OHBM '25**, *Manuscript in progress*",
-      year: "2025",
-    },
-    {
-      title: "EchoWrist: Continuous Hand Pose Tracking and Hand-Object Interaction Recognition Using Low-Power Active Acoustic Sensing On a Wristband",
-      authors: "Chi-Jung Lee, Ruidong Zhang, Devansh Agarwal, Tianhong Catherine Yu, Vipin Gunda, Oliver Lopez, __**James J. Kim**__, Sicheng Yin, Boao Dong, Ke Li, Mose Sakashita, François Guimbretière, Cheng Zhang",
-      venue: "**CHI '24**",
-      year: "2024",
-      link: "https://dl.acm.org/doi/10.1145/3613904.3642910",
+      venue: "*XXX*",
+      year: "XXXX"
     },
   ],
 
@@ -164,44 +131,9 @@ window.CV = {
     },
   ],
 
-  /* ---- Teaching ---- */
-  teaching: [
-    {
-      role: "Graduate Teaching Assistant",
-      course: "Deep Learning (CS 4/5782)",
-      org: "Cornell University",
-      years: "Spring '26",
-      detail: "Profs. Kilian Weinberger & Wei-Chiu Ma",
-    },
-    {
-      role: "Head Graduate Teaching Assistant",
-      course: "Machine Learning (CS 3/5780)",
-      org: "Cornell University",
-      years: "Fall '25",
-      detail: "Prof. John Thickstun",
-    },
-    {
-      role: "Course Consultant",
-      course: "Data Structures and Functional Programming (CS 3110)",
-      org: "Cornell University",
-      years: "Spring '24, Fall '24",
-      detail: "Prof. Michael Clarkson\n*Received CS Course Staff Exceptional Service Award (SP'24)*",
-    },
-  ],
-
-  /* ---- Academic service ---- */
-  service: [
-    {
-      role: "Logistical Coordinator – Symposium Series",
-      org: "[MELBA Journal](https://www.melba-journal.org/)",
-      years: "2024",
-      detail: "Organized MELBA symposiums showcasing leading research in ML and biomedical imaging, promoting open access to scientific knowledge",
-    },
-  ],
-
   /* ---- Footer ---- */
   footer: {
     copyrightYear: 2026,
-    lastUpdated: "April 2026",
+    lastUpdated: "July 2026",
   },
 };
