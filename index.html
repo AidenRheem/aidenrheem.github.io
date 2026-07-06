@@ -282,13 +282,19 @@
         left: w.years, title: w.org, sub: w.role, detail: w.detail,
       })).join('');
 
-      $('teaching').innerHTML = CV.teaching.map((t) => entry({
-        left: t.years, title: t.course, sub: `${t.role}, ${t.org}`, detail: t.detail,
-      })).join('');
+      const teachingEl = $('teaching');
+      if (teachingEl && Array.isArray(CV.teaching)) {
+        teachingEl.innerHTML = CV.teaching.map((t) => entry({
+          left: t.years, title: t.course, sub: `${t.role}, ${t.org}`, detail: t.detail,
+        })).join('');
+      }
 
-      $('service').innerHTML = CV.service.map((s) => entry({
-        left: s.years, title: s.org, sub: s.role, detail: s.detail,
-      })).join('');
+      const serviceEl = $('service');
+      if (serviceEl && Array.isArray(CV.service)) {
+        serviceEl.innerHTML = CV.service.map((s) => entry({
+          left: s.years, title: s.org, sub: s.role, detail: s.detail,
+        })).join('');
+      }
 
       /* ---- Publications ---- */
       $('publications').innerHTML = CV.publications.map((p) => {
@@ -382,6 +388,7 @@
         const myToken = ++renderToken;
         const meta = (CV.posts || []).find((p) => p.slug === slug);
         const el = $('post-content');
+        if (!el) return;
         if (!meta) {
           el.innerHTML = '<div style="color:var(--muted); font-style:italic; padding:24px 0;">Post not found.</div>';
           return;
@@ -414,7 +421,8 @@
         document.body.classList.toggle('view-research', currentView === 'research');
 
         $('bio').hidden = currentView === 'writing';
-        $('section-writing').hidden = currentView !== 'writing';
+        const sectionWriting = $('section-writing');
+        if (sectionWriting) sectionWriting.hidden = currentView !== 'writing';
         $('footer-updated').hidden = currentView === 'writing';
 
         for (const s of researchSections) {
@@ -428,18 +436,20 @@
         }
 
         const heading = $('writing-heading');
-        if (currentView === 'writing') {
+        const postList = $('post-list');
+        const postContent = $('post-content');
+        if (currentView === 'writing' && heading && postList && postContent) {
           if (activePostSlug) {
             heading.textContent = 'back';
             heading.classList.add('back');
-            $('post-list').hidden = true;
-            $('post-content').hidden = false;
+            postList.hidden = true;
+            postContent.hidden = false;
             renderPost(activePostSlug);
           } else {
             heading.textContent = 'writing';
             heading.classList.remove('back');
-            $('post-list').hidden = false;
-            $('post-content').hidden = true;
+            postList.hidden = false;
+            postContent.hidden = true;
             renderPostList();
           }
         }
@@ -501,17 +511,23 @@
       });
 
       /* Post-list click → open post (event-delegated, survives re-renders) */
-      $('post-list').addEventListener('click', (e) => {
-        const a = e.target.closest('[data-post-slug]');
-        if (!a) return;
-        e.preventDefault();
-        goToPost(a.dataset.postSlug);
-      });
+      const postListEl = $('post-list');
+      if (postListEl) {
+        postListEl.addEventListener('click', (e) => {
+          const a = e.target.closest('[data-post-slug]');
+          if (!a) return;
+          e.preventDefault();
+          goToPost(a.dataset.postSlug);
+        });
+      }
 
       /* Section heading flips to a clickable "back" while reading a post */
-      $('writing-heading').addEventListener('click', () => {
-        if (activePostSlug) goBackToList();
-      });
+      const writingHeading = $('writing-heading');
+      if (writingHeading) {
+        writingHeading.addEventListener('click', () => {
+          if (activePostSlug) goBackToList();
+        });
+      }
 
       /* Hash drives view — covers deep links and back/forward */
       window.addEventListener('hashchange', () => {
