@@ -147,6 +147,7 @@
         };
       };
       let { view: currentView, slug: activePostSlug } = parseHash();
+      let showRail = () => {};
 
       /* ---- Header ---- */
       document.title = CV.tabTitle || `${CV.name} — Research`;
@@ -444,6 +445,7 @@
         }
 
         renderLinkRow();
+        if (currentView === 'research') showRail();
       };
 
       /* History helpers — pushState (not replaceState) so the browser
@@ -555,7 +557,7 @@
       const railLinks = Array.from(rail.querySelectorAll('a'));
       let hideTimer;
 
-      const showRail = () => {
+      showRail = () => {
         if (currentView !== 'research') return;
         rail.classList.add('visible');
         clearTimeout(hideTimer);
@@ -598,6 +600,7 @@
         hideTimer = setTimeout(() => rail.classList.remove('visible'), 800);
       });
 
+      if (currentView === 'research') showRail();
       computeActive();
     })();
   </script>
