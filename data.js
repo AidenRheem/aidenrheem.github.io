@@ -47,23 +47,13 @@ window.CV = {
     { label: "linkedin", href: "https://linkedin.com/in/aidenrheem" },
     { label: "scholar", href: "https://scholar.google.com/" },
     { label: "github", href: "https://github.com/aidenrheem" },
-    { label: "writing", href: "#writing" },
     { label: "cv", href: "assets/cv.pdf" },
-  ],
-
-  /* ---- Writing posts (list view) ----
-     Each entry shows up in the "writing" view's post list. The slug must
-     match a key in window.POSTS (see posts.js) for the inline view to render.
-     Most recent first. Leave as [] to show "Nothing here yet." */
-  posts: [
-    { slug: "the-pot-of-the-2020s", date: "19 Aug 2025", title: "The “pot” of the (20)20s" },
   ],
 
   /* ---- News ----
      Most recent first. Leave as [] to hide the whole section. */
   news: [
-    { date: "Aug 2026", text: "Started my PhD in CS at Cornell. Many thanks to Jenn and Peter."},
-    { date: "Aug 2025", text: "Started my MS in CS at Cornell." },
+    { date: "Aug 2026", text: "Started my BS in Environmental Science at UC Berkeley. Many thanks to my family and mentors."},
   ],
 
   /* ---- Education ---- */
@@ -80,7 +70,7 @@ window.CV = {
      `link` is optional — include it to make the title clickable. */
   publications: [
     {
-      title: "XXX",
+      title: "1",
       authors: "Ziang Liu\\*, __**James J. Kim**__\\*, Yijia Dai, Jennifer J. Sun",
       venue: "*XXX*",
       year: "XXXX"

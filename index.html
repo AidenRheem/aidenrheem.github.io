@@ -69,14 +69,6 @@
       <div class="about-body" id="bio"></div>
     </section>
 
-    <!-- Writing (toggled on by the "writing" link in the hero link row).
-         When visible, the bio + research sections are hidden. -->
-    <section id="section-writing" hidden>
-      <h2 class="writing-heading" id="writing-heading">writing</h2>
-      <div class="post-list" id="post-list"></div>
-      <div class="post-inline" id="post-content" hidden></div>
-    </section>
-
     <!-- News (hidden automatically if CV.news is empty) -->
     <section data-sec="news" id="section-news" hidden>
       <h2 class="section-title">News</h2>
@@ -102,16 +94,6 @@
     <section data-sec="work">
       <h2 class="section-title">Work Experience</h2>
       <div id="work"></div>
-    </section>
-
-    <section data-sec="teaching">
-      <h2 class="section-title">Teaching Experience</h2>
-      <div id="teaching"></div>
-    </section>
-
-    <section data-sec="service">
-      <h2 class="section-title">Academic Service</h2>
-      <div id="service"></div>
     </section>
 
     <footer>
@@ -324,32 +306,6 @@
       /* ---- Footer ---- */
       $('footer-copy').textContent = `© ${CV.footer.copyrightYear} ${CV.name}`;
       $('footer-updated').textContent = `Last updated ${CV.footer.lastUpdated}`;
-
-      /* ---- Writing view ----
-         When `currentView === 'writing'`, the bio + research sections
-         hide and the writing section reveals either a post list or an
-         inline post (based on activePostSlug). Hash drives all of this
-         so deep links and back/forward work. */
-      const researchSections = Array.from(
-        document.querySelectorAll('section[data-sec]:not([data-sec="about"])')
-      );
-      const newsHasContent = !!(CV.news && CV.news.length);
-
-      const renderPostList = () => {
-        const posts = CV.posts || [];
-        if (!posts.length) {
-          $('post-list').innerHTML =
-            '<div style="padding:32px 4px; color:var(--muted); font-style:italic;">Nothing here yet.</div>';
-          return;
-        }
-        $('post-list').innerHTML = posts.map((p) => `
-          <a href="#writing/${encodeURIComponent(p.slug)}"
-             class="post-row" data-post-slug="${esc(p.slug)}">
-            <div class="post-date">${esc(p.date)}</div>
-            <div class="post-title">${esc(p.title)}</div>
-          </a>
-        `).join('');
-      };
 
       /* Footnote interactions: superscript click → smooth-scroll to note +
          flash; rewind icon → smooth-scroll back to the ref + flash. Bound
