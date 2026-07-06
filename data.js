@@ -53,7 +53,7 @@ window.CV = {
   /* ---- News ----
      Most recent first. Leave as [] to hide the whole section. */
   news: [
-    { date: "Aug 2026", text: "Started my BS in Environmental Science at UC Berkeley. Many thanks to my family and mentors."},
+    { date: "Aug 2026", text: "Started my BS in Environmental Science at UC Berkeley. Thanks to Hyunjin for supporting me through my college applications." },
   ],
 
   /* ---- Education ---- */
