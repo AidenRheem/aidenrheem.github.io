@@ -314,11 +314,15 @@
       $('footer-copy').textContent = `© ${CV.footer.copyrightYear} ${CV.name}`;
       $('footer-updated').textContent = `Last updated ${CV.footer.lastUpdated}`;
 
+      const researchSections = Array.from(document.querySelectorAll('section[data-sec]'));
+      const newsHasContent = !!(CV.news && CV.news.length);
+
       /* Footnote interactions: superscript click → smooth-scroll to note +
          flash; rewind icon → smooth-scroll back to the ref + flash. Bound
          once on the stable post-content element via event delegation. */
       (() => {
         const root = $('post-content');
+        if (!root) return;
         const flash = (el) => {
           if (!el) return;
           el.classList.remove('flash');
@@ -571,13 +575,10 @@
       /* ---- Side rail: show-on-scroll + active-section highlight ---- */
       const rail = $('rail');
       const railLinks = Array.from(rail.querySelectorAll('a'));
-      let hideTimer;
 
       showRail = () => {
         if (currentView !== 'research') return;
         rail.classList.add('visible');
-        clearTimeout(hideTimer);
-        hideTimer = setTimeout(() => rail.classList.remove('visible'), 1500);
       };
 
       const computeActive = () => {
@@ -608,12 +609,7 @@
         if (['PageUp', 'PageDown', 'Home', 'End', 'ArrowUp', 'ArrowDown', ' '].includes(e.key)) showRail();
       });
       rail.addEventListener('mouseenter', () => {
-        clearTimeout(hideTimer);
         rail.classList.add('visible');
-      });
-      rail.addEventListener('mouseleave', () => {
-        clearTimeout(hideTimer);
-        hideTimer = setTimeout(() => rail.classList.remove('visible'), 800);
       });
 
       if (currentView === 'research') showRail();
