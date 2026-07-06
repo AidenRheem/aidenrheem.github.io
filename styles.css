@@ -92,6 +92,11 @@ a:hover { text-decoration: underline; }
   opacity: 1;
   pointer-events: auto;
 }
+body.view-research .rail {
+  transform: translate(0, -50%);
+  opacity: 1;
+  pointer-events: auto;
+}
 .rail a {
   display: flex; align-items: center; gap: 10px;
   color: var(--muted);
